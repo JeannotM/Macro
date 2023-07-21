@@ -27,8 +27,6 @@ int main(int argc, char *argv[])
                    MOD_SHIFT,
                    VK_F5);
 
-    UnregisterHotKey((HWND) w.winId(), GlobalAddAtomA("SHIFT+F5"))
-
     QObject::connect(w.filter, &MyNativeEventFilter::buttonClick, &w, &MainWindow::nativeEventFilter);
 
     a.installNativeEventFilter(w.filter);

@@ -24,6 +24,7 @@ public:
 
     MyNativeEventFilter *filter;
 
+
 private slots:
     void on_addNewMacro_clicked();
 
@@ -31,9 +32,17 @@ private slots:
 
     void on_addNewPause_clicked();
 
+protected:
+    void tick();
+
 private:
     Ui::MainWindow *ui;
 
+    uint64_t currentTime();
+
+    uint64_t addTime(int ms);
+
+    HWND getFocusGlobal();
 };
 
 #endif // MAINWINDOW_H
